@@ -4,16 +4,9 @@
 
     <div>
 
-        <x-test />
-
-    </div>
-
-    <div>
-
-        @if($articles)
+    @if($articles)
             @foreach($articles as $index => $article)
                 @if($article['visible'])
-
                 <x-card
                     :category="$article['category']"
                     :title="$article['title']"
@@ -21,14 +14,10 @@
                     :index="$index"
                     :route="route('article', $index)"
                 />
-
                 @endif
             @endforeach
-            
         @else
-
             <p>Non ci sono articoli disponibili</p>
-
         @endif
     </div>
 

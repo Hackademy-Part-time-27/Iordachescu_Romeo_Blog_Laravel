@@ -23,7 +23,7 @@ class PageController extends Controller
 
     public function welcome()
     {
-        $title = config('app.name');
+        $title = "Welcome to everyone";
 
         return view('welcome', compact('title'));
 
@@ -56,7 +56,7 @@ class PageController extends Controller
 
         if(! $article['visible']) {
             
-            // se l'articolo non è visibile, verrà eseguito il codice seguente
+       
 
             abort(404);
 
@@ -64,4 +64,5 @@ class PageController extends Controller
 
         return view('pages.article', ['article' => $article]);
     }
+   
 }
