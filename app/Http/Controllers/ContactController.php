@@ -19,8 +19,6 @@ class ContactController extends Controller
             return redirect()->back()->with(['error' => 'I campi non possono essere vuoti.']);
         }
 
-       
-
         \Illuminate\Support\Facades\Mail::to('admin@example.com')
             ->send(new \App\Mail\ContactMail($request->email, $request->message));
 

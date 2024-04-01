@@ -1,7 +1,13 @@
 @import "bootstrap";
 
-.title-blue {
+.title-red {
 
-    color: blue;
+    color: red;
+
+}
+
+.articles-blueviolet {
+
+    color: blueviolet;
 
 }
