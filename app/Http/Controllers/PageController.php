@@ -29,7 +29,7 @@ class PageController extends Controller
 
     public function articles()
     {   
-        $articles = Article::where('visible',true)->get();
+        $articles = Article::where('visible', true)->get();
         return view('pages.articles', ['articles' => $articles]);
     }
 

@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-
+            
             $table->string('title', 150); // varchar
             $table->string('category', 600);
-            $table->string('description',1000);
+            $table->string('description',600);
             $table->boolean('visible')->default(true);
-
+            
             $table->timestamps();
         });
     }
