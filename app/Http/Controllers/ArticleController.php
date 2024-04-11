@@ -39,7 +39,6 @@ class ArticleController extends Controller
 
             $article->save();
 
-
         }
 
         return redirect()->route('articles.index')->with(['success' => 'Articolo creato correttamente!']);
