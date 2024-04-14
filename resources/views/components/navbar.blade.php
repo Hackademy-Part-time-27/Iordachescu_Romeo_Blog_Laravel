@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ route('welcome') }}">
-      <img class="me-2" src="{{ asset('storage/img/logo.png') }}" alt="{{ config('app.name') }}">
+    <img class="me-2" src="{{ asset('storage/img/logo.png') }}" alt="{{ config('app.name') }}">
       <strong>{{ config('app.name') }}</strong>
   </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,6 +30,7 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="{{ route('articles.index') }}">Gestione Articoli</a></li>
+                <li><a class="dropdown-item" href="{{ route('categories.index') }}">Gestione Categorie</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
                   <form action="/logout" method="POST">

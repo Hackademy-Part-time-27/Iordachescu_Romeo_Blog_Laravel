@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -16,8 +17,6 @@ Route::get('/articoli', [PageController::class, 'articles'])->name('articles');
 
 Route::get('/articolo/{article}', [PageController::class, 'article'])->name('article');
 
-Route::get('/test', [App\Http\Controllers\TestController::class, 'test'])->name('test');
-
 
 // Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account.index')->middleware('auth');
 
@@ -29,4 +28,21 @@ Route::prefix('account')->middleware('auth')->group(function () {
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
     Route::post('/articles/store', [ArticleController::class, 'store'])->name('articles.store');
 
+    Route::resource('/categories', CategoryController::class);
+
 });
+
+// Route::get('insert', function () {
+
+
+//     for($i = 3; $i <= 50; $i++) {
+
+//         App\Models\Article::create([
+//             'title' => 'Articolo ' . $i,
+//             'category' => 'Esteri',
+//             'description' => '...',
+//         ]);
+
+//     }
+
+// });
