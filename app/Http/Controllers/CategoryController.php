@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('categories.index',['categories'=>Category::all()]);
+        return view('categories.index', ['categories' => Category::all()]);
     }
 
     /**
@@ -21,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-       return view('categories.create');
+        return view('categories.create');
     }
 
     /**
@@ -47,13 +47,13 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('categories.edit',['category'=>$category]);
+        return view('categories.edit', ['category' => $category]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(StoreCategoryRequest $request, Category $category)
     {
         $category->update($request->all());
 
@@ -65,8 +65,13 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        if($category->articles->count()) {
+            $category->articles()->delete();
+           
+        }
         $category->delete();
 
         return redirect()->back()->with(['success' => 'Categoria cancellata correttamente.']);
+        
     }
 }

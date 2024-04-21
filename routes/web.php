@@ -27,22 +27,32 @@ Route::prefix('account')->middleware('auth')->group(function () {
     Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
     Route::post('/articles/store', [ArticleController::class, 'store'])->name('articles.store');
+    Route::get('/articles/{article}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
+    Route::put('/articles/{article}/update', [ArticleController::class, 'update'])->name('articles.update');
+    Route::delete('/articles/{article}/destroy', [ArticleController::class, 'destroy'])->name('articles.destroy');
 
     Route::resource('/categories', CategoryController::class);
 
+    /*
+    Route::resources([
+        '/categories' => CategoryController::class,
+        '/articles' => ArticleController::class,
+    ]);*/
 });
 
-// Route::get('insert', function () {
+/*
+Route::get('insert', function () {
 
 
-//     for($i = 3; $i <= 50; $i++) {
+    for($i = 3; $i <= 50; $i++) {
 
-//         App\Models\Article::create([
-//             'title' => 'Articolo ' . $i,
-//             'category' => 'Esteri',
-//             'description' => '...',
-//         ]);
+        App\Models\Article::create([
+            'title' => 'Articolo ' . $i,
+            'category' => 'Esteri',
+            'description' => '...',
+        ]);
 
-//     }
+    }
 
-// });
+
+});*/

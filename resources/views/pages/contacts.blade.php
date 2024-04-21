@@ -1,8 +1,8 @@
 <x-layout>
     <div class="row">
         <div class="col-lg-6 mx-auto">
-            <h1>Contacts</h1>
-            <p class="lead text-muted">Contact us to receive information on our blog!</p>
+            <h1>Contatti</h1>
+            <p class="lead text-muted">Contattaci per ricevere informazioni sul nostro blog!</p>
 
             <x-success />
 

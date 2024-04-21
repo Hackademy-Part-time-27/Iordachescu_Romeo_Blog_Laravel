@@ -25,11 +25,13 @@ class StoreCategoryRequest extends FormRequest
             'name' => 'required|max:50'
         ];
     }
-        public function messages(): array
-        {
-            return [
-                'name.required' => 'Il campo Nome è obbligatorio',
-                'name.max' => 'Il campo Nome non può essere più lungo di :max caratteri.',
-            ];
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Il campo Nome è obbligatorio',
+            'name.max' => 'Il campo Nome non può essere più lungo di :max caratteri.',
+        ];
     }
 }
+

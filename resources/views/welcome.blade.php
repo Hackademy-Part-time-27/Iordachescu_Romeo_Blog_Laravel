@@ -7,6 +7,6 @@
             <li>{{ $article->id }} {{ $article->title }}</li>
             @endforeach
         </ul>
-        {{--$articles->links()--}} {{-- vale per paginate --}}
+        {{-- $articles->links() --}} {{-- vale per paginate --}}
     </div>
 </x-layout>
