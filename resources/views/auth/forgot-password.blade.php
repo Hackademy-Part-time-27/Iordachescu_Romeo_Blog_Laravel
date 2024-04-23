@@ -1,16 +1,16 @@
-<x-layout title="Accedi">
+<x-layout title="Recupero password">
     <div class="row">
         <div class="col-md-6 mx-auto">
-            <h1>Accedi con il tuo Account</h1>
+            <h1>Recupero password</h1>
 
-            @if (session('status'))
+            @if(session('status'))
                 <div class="alert alert-success">
                     {{ session('status') }}
                 </div>
             @endif
 
             <div class="mt-5">
-                <form action="/login" method="POST">
+                <form action="/forgot-password" method="POST">
                     @csrf
                     <div class="row g-3">
                         <div class="col-12">
@@ -19,14 +19,7 @@
                             @error('email') <span class="small text-danger">{{ $message }}</span> @enderror
                         </div>
                         <div class="col-12">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" class="form-control">
-                            @error('password') <span class="small text-danger">{{ $message }}</span> @enderror
-
-                            <a href="/forgot-password" class="small">Hai dimenticato la password?</a>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Accedi</button>
+                            <button type="submit" class="btn btn-primary">Recupera password</button>
                         </div>
                     </div>
                 </form>

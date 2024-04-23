@@ -27,7 +27,7 @@ class ContactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new \Illuminate\Mail\Mailables\Address('Billi@example.com', 'Bill Gates'),
+            from: new \Illuminate\Mail\Mailables\Address('jeffrey@example.com', 'Jeffrey Way'),
             subject: 'Hai ricevuto un nuovo contatto dal Blog: ' . config('app.name'),
         );
     }

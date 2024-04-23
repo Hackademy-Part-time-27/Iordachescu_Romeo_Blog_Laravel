@@ -25,10 +25,12 @@ class ArticleController extends Controller
 
     public function store(StoreArticleRequest $request)
     {
-
+        // dd($request->all());
         // dd(array_merge($request->all(), ['user_id' => auth()->user()->id]));
 
         $article = Article::create(array_merge($request->all(), ['user_id' => auth()->user()->id]));
+
+        $article->categories()->attach($request->categories);
 
         // Qui ci assicuriamo che il file esista e sia stato caricato correttamente
         if($request->hasFile('image') && $request->file('image')->isValid()) {
@@ -71,6 +73,11 @@ class ArticleController extends Controller
 
         $article->update($request->all());
 
+        // $article->categories()->detach(1);
+        // $article->categories()->detach([1, 2]);
+        $article->categories()->detach();
+        $article->categories()->attach($request->categories);
+
         return redirect()->back()->with(['success' => 'Articolo modificato correttamente!']);
     }
 
@@ -79,6 +86,8 @@ class ArticleController extends Controller
         if($article->user_id !== auth()->user()->id) {
             abort(403);
         }
+
+        $article->categories()->detach();
 
         $article->delete();
 
