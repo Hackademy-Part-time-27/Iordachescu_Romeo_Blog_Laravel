@@ -49,4 +49,9 @@ class PageController extends Controller
     {
         return view('pages.article', ['article' => $article]);
     }
+
+    public function searchUsers()
+    {
+        return view('search-users');
+    }
 }

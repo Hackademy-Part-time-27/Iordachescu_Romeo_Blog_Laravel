@@ -21,4 +21,13 @@ class Article extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public static function search($search)
+    {
+        if($search == ''){
+            return [];
+        }
+
+        return self::where('title','LIKE',"%$search%")->get();
+    }
 }
