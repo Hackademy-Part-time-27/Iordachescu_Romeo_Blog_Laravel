@@ -21,11 +21,7 @@
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->name }}</td>
                 <td>
-                    <ul>
-                        @foreach($category->articles as $article)
-                        <li><a href="{{ route('article', $article) }}" target="_blank">{{ $article->title }}</a></li>
-                        @endforeach
-                    </ul>
+                   
                 </td>
                 <td class="text-end">
                     <a href="{{ route('categories.edit', $category) }}" class="btn btn-secondary btn-sm">modifica</a>

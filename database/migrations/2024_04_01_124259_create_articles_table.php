@@ -16,7 +16,7 @@ return new class extends Migration
             
             $table->string('title', 150); // varchar
             $table->string('category', 50);
-            $table->string('description');
+            $table->string('description',600);
             $table->boolean('visible')->default(true);
             
             $table->timestamps();

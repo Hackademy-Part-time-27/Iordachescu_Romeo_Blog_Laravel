@@ -18,7 +18,7 @@
 
     <x-slot:extra>
     <script>
-        ...
+       ...
     </script>
     </x-slot>
 </x-layout>

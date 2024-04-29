@@ -16,7 +16,7 @@ class PageController extends Controller
         // $articles = Article::orderBy('id')->get();
         // $articles = Article::orderBy('id', 'DESC')->get();
         // $articles = Article::orderBy('category')->get();
-        $articles = Article::orderBy('created_at', 'DESC')->take(10)->get();
+        $articles = Article::orderBy('created_at', 'DESC')->take(4)->get();
         // $articles = Article::where('title', 'LIKE', '%ticolo%')->get();
         
         // $person = Person::where('age', '>', 50)->get(); non funziona perché non abbiamo il modello Person

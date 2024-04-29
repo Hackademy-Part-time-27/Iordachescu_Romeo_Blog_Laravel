@@ -15,6 +15,10 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('articles') }}">Articoli</a>
         </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('anime.genres') }}">Anime</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('about-me') }}">Chi Sono</a>
         </li>

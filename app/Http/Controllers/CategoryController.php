@@ -81,7 +81,7 @@ class CategoryController extends Controller
             \App\Models\Article::where('category_id', $category->id)->delete();
         }*/
 
-        $category->articles()->detach();
+        // $category->articles()->detach();
         $category->delete();
 
         return redirect()->back()->with(['success' => 'Categoria cancellata correttamente.']);

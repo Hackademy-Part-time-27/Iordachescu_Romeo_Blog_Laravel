@@ -18,6 +18,7 @@
                     <th>Titolo</th>
                     <th>Categoria</th>
                     <th>Visibile</th>
+                    <th>Cancellato</th>
                     <th></th>
                 </tr>
             </thead>
@@ -37,6 +38,9 @@
                         @else
                         <span class="badge text-bg-danger">No</span>
                         @endif
+                    </td>
+                    <td>
+                        {{ $article->trashed() ? 'Si' : 'No'}}
                     </td>
                     <td class="text-end">
                         <a href="{{ route('articles.edit', $article) }}" class="btn btn-sm btn-secondary">modifica</a>

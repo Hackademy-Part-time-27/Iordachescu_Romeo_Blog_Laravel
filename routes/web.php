@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
@@ -41,3 +42,7 @@ Route::prefix('account')->middleware('auth')->group(function () {
         '/articles' => ArticleController::class,
     ]);*/
 });
+
+Route::get('anime/genres', [AnimeController::class, 'genres'])->name('anime.genres');
+Route::get('anime/genres/{genre_id}', [AnimeController::class, 'anime'])->name('anime');
+Route::get('anime/{anime_id}', [AnimeController::class, 'animeShow'])->name('anime.show');
