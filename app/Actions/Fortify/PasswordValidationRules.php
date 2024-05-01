@@ -11,12 +11,18 @@ trait PasswordValidationRules
      *
      * @return array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>
      */
-    protected function passwordRules(): array
+    protected function passwordRules($confirmed =true): array
     {
         $password = new Password(5);
 
         $password->mixedCase()->letters()->numbers()->symbols();
 
-        return ['required', 'string', $password, 'confirmed'];
+        if($confirmed){
+            $confirmedValidation = 'confirmed';
+        } else {
+            $confirmedValidation = null;
+        }
+
+        return ['required', 'string', $password, $confirmedValidation];
     }
 }

@@ -36,6 +36,10 @@ Route::prefix('account')->middleware('auth')->group(function () {
 
     Route::resource('/categories', CategoryController::class);
 
+    Route::get('/users', function () {
+        return view('admin.users');
+    });
+        
     /*
     Route::resources([
         '/categories' => CategoryController::class,
